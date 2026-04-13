@@ -89,7 +89,7 @@ const app = {
             openAnswerPlaceholder: 'Введите ответ...'
         },
         uz: {
-            pageTitle: 'MathCore - Matematika imtihonlariga tayyorgarlik',
+            pageTitle: 'LambdaPi - Matematika imtihonlariga tayyorgarlik',
             navResults: 'Natijalar',
             navAdmin: 'Admin',
             heroEyebrow: 'Matematika bo‘yicha tayyorgarlik platformasi',
@@ -1049,7 +1049,7 @@ const app = {
     async saveTestToGitHub(exam, testId, testData, files) {
         const token = this.state.githubToken;
         const owner = 'mardon0207';
-        const repo = 'mathcore-platform';
+        const repo = 'lambdapi';
         
         const jsPath = `js/data/${exam}/${testId}.js`;
         const jsContent = `TEST_DATA = ${JSON.stringify(testData, null, 2)};`;
