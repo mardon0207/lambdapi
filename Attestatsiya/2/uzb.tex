@@ -1,0 +1,543 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{titlesec} % Sarlavhalarni sozlash uchun
+\usepackage{enumitem} % Ro'yxatlarni sozlash uchun
+\usepackage{fancyhdr} % Kolontitullar uchun
+\usepackage{tabularx} % Jadval uchun
+\usepackage{lastpage} % Oxirgi sahifa raqami uchun
+\usepackage{xcolor} % Ranglar uchun
+\usepackage{tcolorbox} % Chiroyli qutilar uchun
+\tcbuselibrary{skins, breakable}
+\usepackage{hyperref}
+% --- USLUB SOZLASH ---
+\geometry{a4paper, left=25mm, right=15mm, top=20mm, bottom=20mm, headheight=15pt}
+\setlength{\parindent}{0pt} % Abzas chetini olib tashlash
+\setlist[enumerate]{topsep=5pt, itemsep=8pt, leftmargin=25pt} % Ro'yxat sozlash
+\titleformat{\section}{\large\bfseries\centering}{\thesection}{1em}{} % Bo'limlar uslubi
+
+% --- KOLONTITULLAR (2-sahifadan boshlab) ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\includegraphics[height=1cm]{logo.png} \textbf{MathCore} | MOCK Test-2}
+\fancyhead[R]{Abdunazarov M.X.}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{%
+\includegraphics[height=1cm]{tg.png}%
+\href{https://t.me/Abd_mardon}{\textbf{@Abd\_mardon}}%
+}
+\fancyfoot[L]{%
+\includegraphics[height=1.2cm]{logo.png}%
+\href{https://t.me/Math_Core_Dtm_MS_Att}{\textbf{MathCore}}%
+}
+\renewcommand{\headrulewidth}{0.1pt}
+
+% --- Yangi muhit: Savol qutisi ---
+\newenvironment{savol}[1][]{%
+    \tcolorbox[%
+        breakable,
+        enhanced,
+        colback=white,
+        colframe=blue!30!black,
+        arc=2.5mm,
+        boxrule=1pt,
+        title=#1,
+        fonttitle=\bfseries,
+        coltitle=blue!30!black,
+        attach boxed title to top left={yshift=-2mm, xshift=5mm},
+        boxed title style={colback=white, sharp corners}
+    ]
+}{\endtcolorbox}
+
+\title{MOCK Test-2}
+\author{Abdunazarov M.X.}
+\date{}
+
+\begin{document}
+
+\maketitle
+\begin{center}
+    \includegraphics[width=0.4\linewidth]{logo.png}
+\end{center}
+
+\begin{enumerate}
+
+\begin{savol}[1-savol]
+Tomoni 4 ga teng teng tomonli uchburchakdan tasodifiy nuqta tanlanadi. Uchburchak ichida ichki chizilgan aylana yasalgan. Tanlangan nuqta aylana ichiga tushish ehtimolini toping.
+ 
+\begin{enumerate}
+    \item[A)] \(\frac{\pi\sqrt{3}}{6}\)
+    \item[B)] \(\frac{\pi\sqrt{3}}{9}\)
+    \item[C)] 0.4
+    \item[D)] \(\frac{2}{\pi}\)
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[2-savol]
+Hisoblang: \(\frac{15}{14} + \frac{1515}{1414} + \frac{151515}{141414} + \cdots + \frac{15151515151515}{14141414141414}\) \\
+\begin{enumerate}
+    \item[A)] 15
+    \item[B)] 3
+    \item[C)] 7,5
+    \item[D)] 8,5
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[3-savol]
+\( a, b, c \) — musbat butun sonlar, \( \text{EKUB}(b; c) = 5 \); \( \text{EKUB}(c; d) = 7 \) shartlarni qanoatlantiradi. \( b + c + d \) ning eng kichik qiymatini toping. \\
+\begin{enumerate}
+    \item[A)] 12
+    \item[B)] 24
+    \item[C)] 38
+    \item[D)] 47
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[4-savol]
+\((x - 1)^4 + 2x = x^2 + 73\) tenglamaning haqiqiy ildizlari ko'paytmasini toping. \\
+\begin{enumerate}
+    \item[A)] 5
+    \item[B)] \(-7\)
+    \item[C)] 4
+    \item[D)] \(-8\)
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[5-savol]
+Ifodani soddalashtiring:
+\[
+\frac{2x+y-\frac{4y^2-x^2}{y}}{x^3+2x^2y-3xy^2} + \left( \frac{y^3x-2x^2y^2+x^3y}{y^2-x^2} \right)^{-1}
+\]
+\begin{enumerate}
+    \item[A)] \(\frac{-2}{x(y-x)}\)
+    \item[B)] \(\frac{-2y}{x(y-x)}\)
+    \item[C)] \(\frac{2y}{x(y-x)}\)
+    \item[D)] \(\frac{2}{x(y-x)}\)
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[6-savol]
+Jasur bitta musbat butun sonni o'yladi. Uning yozuviga o'ngdan 5 raqamini qo'shdilar va hosil bo'lgan sondan o'ylangan sonning kvadratini ayirdi. Ayirmani o'ylangan songa bo'ldi, so'ngra natijadan o'ylangan sonni ayirdi va natija 1 chiqdi. O'ylangan son quyidagilarning qaysi biriga qoldiqsiz bo'linadi? \\
+\begin{enumerate}
+    \item[A)] 5
+    \item[B)] 7
+    \item[C)] 9
+    \item[D)] 4
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[7-savol]
+12\% li tuz eritmasi bilan to'ldirilgan idishdan 1 litr eritma to'kib yuborildi va 1 litr suv quyildi, so'ngra yana 1 litr eritma to'kib yuborildi va yana 1 litr suv quyildi. Natijada idishda 3\% li tuz eritmasi hosil bo'ldi. Idishning sig'imini toping. \\
+\begin{enumerate}
+    \item[A)] 2 l
+    \item[B)] 5 l
+    \item[C)] 4 l
+    \item[D)] 1,5 l
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[8-savol]
+Ikki bosqichli avtopoygada, uchta avtomobil doimiy tezlik bilan harakatlandi. Quyidagilar ma'lum: I-avtomobil birinchi bosqichda 150 km/soat tezlik bilan harakatlandi va birinchi bosqichni 12 daqiqada yakunladi. II-avtomobil butun poygada 120 km/soat tezlik bilan harakatlandi va uni 20 daqiqada yakunladi. III-avtomobil ikkinchi bosqichni 6 daqiqada yakunladi. Uning tezligini toping (km/soatda). \\
+\begin{enumerate}
+    \item[A)] 80
+    \item[B)] 90
+    \item[C)] 100
+    \item[D)] 110
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[9-savol]
+\(x^2 + 7|x| + 12 - a - a^2 = 0\) tenglamaning ikkita har xil haqiqiy ildizga ega bo'ladigan \(a\) parametrining eng kichik musbat butun va eng katta manfiy butun qiymatlari yig'indisini toping. \\
+\begin{enumerate}
+    \item[A)] 4
+    \item[B)] 5
+    \item[C)] \(-1\)
+    \item[D)] 0
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[10-savol]
+\(y = a^x\), \(y = b^x\), \(y = c^x\) ko'rsatkichli funksiyalar grafiklariga asosan, \( |b - a| + |c - a| - |c - b| \) ifodani soddalashtiring. \\
+\begin{center}
+        \centering
+        \includegraphics[width=0.5\linewidth]{1.png}
+\end{center}
+\begin{enumerate}
+    \item[A)] \(2a - 2b\)
+    \item[B)] \(2b - 2a\)
+    \item[C)] \(a - c\)
+    \item[D)] 0
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[11-savol]
+\(y = (m - 2)^x\) ko'rsatkichli funksiya o'suvchi, \(y = \log_{2m-7}x\) logarifmik funksiya esa kamayuvchi bo'lishi uchun \(m\)  qanday bo'lishi kerak? \\
+\begin{enumerate}
+    \item[A)] \((3; 4)\)
+    \item[B)] \((3; +\infty)\)
+    \item[C)] \((3.5; 4)\)
+    \item[D)] \((4; +\infty)\)
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[12-savol]
+\(\sin 3x - \sin 7x = \sqrt{3} \sin 2x\) tenglamaning \([0; \frac{\pi}{2}]\) oraliqdagi ildizlari yig'indisini toping. \\
+\begin{enumerate}
+    \item[A)] \(\frac{9\pi}{10}\)
+    \item[B)] \(\frac{2\pi}{3}\)
+    \item[C)] \(\frac{5\pi}{6}\)
+    \item[D)] \(\frac{2\pi}{5}\)
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[13-savol]
+Ma'lum bir sonning kvadratini olish uchun tenglamaning ildiziga qanday eng kichik sonni qo'shish kerak?
+\[
+\frac{6}{-\sqrt{x} + \sqrt{x + 6}} + \frac{3}{\sqrt{x - 3} - \sqrt{x}} = 1
+\]
+\begin{enumerate}
+    \item[A)] 4
+    \item[B)] 5
+    \item[C)] 6
+    \item[D)] 7
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[14-savol]
+Noldan farqli \(a\) va \(b\) haqiqiy sonlari uchun, \(a^2b\), \(3ab\), \(a + 2b\) sonlari ko'rsatilgan tartibda ham arifmetik, ham geometrik progressiyani hosil qiladi. \(b\) ning qiymatini toping. \\
+\begin{enumerate}
+    \item[A)] \(\frac{3}{7}\)
+    \item[B)] \(\frac{3}{5}\)
+    \item[C)] \(\frac{3}{2}\)
+    \item[D)] \(\frac{7}{3}\)
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[15-savol]
+Axborot-resurs markazidagi 30 ta kompyuter bir-biri bilan kabellar orqali bog'langan. Agar har bir kompyuter uchun kiruvchi va chiquvchi kabellar sonining yig'indisi 6 ga teng bo'lsa, jami nechta kabellar kerak? \\
+\begin{enumerate}
+    \item[A)] 90
+    \item[B)] 40
+    \item[C)] 180
+    \item[D)] 200
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[16-savol]
+Birinchi qutida 3 ta qizil va 2 ta ko'k shar, ikkinchi qutida 4 ta ko'k va 2 ta qizil shar bor. Birinchi qutidan sharni olib, ikkinchi qutiga qo'yildi. So'ngra ikkinchi qutidan shar olindi. Ikkinchi qutidan olingan shar birinchi qutidan olingan shar bilan bir xil rangda bo'lish ehtimolini toping. \\
+\begin{enumerate}
+    \item[A)] \(\frac{2}{7}\)
+    \item[B)] \(\frac{19}{35}\)
+    \item[C)] \(\frac{9}{35}\)
+    \item[D)] \(\frac{3}{5}\)
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[17-savol]
+Agar \(x^2 + x + 1 = 0\) bo'lsa, \(\left(x^3 + \frac{1}{x^3}\right)^3\) ifodaning son qiymatini toping. \\
+\begin{enumerate}
+    \item[A)] 8
+    \item[B)] 1
+    \item[C)] \(-1\)
+    \item[D)] \(-8\)
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[18-savol]
+Rasmdagi ma'lumotlarga asosan, to'rtburchakning eng katta yuzini toping.
+\begin{center}
+       \centering
+       \includegraphics[width=0.5\linewidth]{2.png}
+\end{center}
+\begin{enumerate}
+    \item[A)] 48
+    \item[B)] 36
+    \item[C)] 28
+    \item[D)] 54
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[19-savol]
+Rasmdagi funksiyaning \((-6; 12)\) oraliqdagi hosilasi grafigi berilgan. Funksiyaning o'sish oralig'idagi uzunliklar yig'indisining kamayish oralig'idagi uzunliklar yig'indisiga nisbatini toping.
+\begin{center}
+       \centering
+       \includegraphics[width=0.5\linewidth]{3.png}
+\end{center}
+\begin{enumerate}
+    \item[A)] 2:1
+    \item[B)] \(\frac{1}{2}\)
+    \item[C)] \(\frac{11}{7}\)
+    \item[D)] \(\frac{13}{5}\)
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[20-savol]
+Integralni hisoblang: 
+\[
+\int \frac{x}{\cos^2 (x^2 + 1)}  dx
+\]
+\begin{enumerate}
+    \item[A)] \(\frac{1}{2} \tg(x^2 + 1) + C\)
+    \item[B)] \(2 \tg(x^2 + 1) + C\)
+    \item[C)] \(\frac{1}{2} \ctg(x^2 + 1) + C\)
+    \item[D)] \(\ctg(x^2 + 1) + C\)
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[21-savol]
+\(S_1, S_2, S_3\) ko'rsatilgan  sohalarning yuzalarini bo'lsa,  \(\frac{S_1 + S_2}{S_3}\) nisbatning qiymatini toping.
+\begin{center}
+       \centering
+       \includegraphics[width=0.4\linewidth]{4.png}
+\end{center}
+\begin{enumerate}
+    \item[A)] 3:1
+    \item[B)] 2:1
+    \item[C)] 3:2
+    \item[D)] 1
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[22-savol]
+Quyidagi tasdiqlarni solishtiring?
+     
+        1. To'g'ri burchakli uchburchakning perimetri \(P = 2(c + r)\), bu yerda \(c\) — gipotenuza, \(r\) — ichki chizilgan aylana radiusi.\\
+       
+        2. Teng tomonli uchburchakga tashqi chizilgan aylana markazi uning bissektrisasida yotadi. \\
+        
+        3. Ixtiyoriy to'rtburchakning tomonlarining o'rtalarini ketma-ket tutashtirish orqali hosil bo'lgan to'rtburchak parallelogramm bo'ladi. \\
+        
+ 
+\begin{enumerate}
+    \item[A)] 1-To'g'ri, 2-To'g'ri, 3-Noto'g'ri
+    \item[B)] 1-Noto'g'ri, 2-To'g'ri, 3-To'g'ri
+    \item[C)] 1-Noto'g'ri, 2-Noto'g'ri, 3-Noto'g'ri
+    \item[D)] 1-To'g'ri, 2-To'g'ri, 3-To'g'ri
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[23-savol]
+Aylana 13 : 14 : 9 nisbatda uchta yoyga bo'lingan va bo'lish nuqtalari tutashtirilib, uchburchak hosil qilingan. Agar hosil bo'lgan uchburchakning kichik tomoni \(\sqrt[4]{12}\) sm bo'lsa, shu aylana radiusini toping. \\
+\begin{enumerate}
+    \item[A)] \(\sqrt[4]{4}\)
+    \item[B)] 4,5
+    \item[C)] 9
+    \item[D)] \(\sqrt[4]{3}\)
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[24-savol]
+\(ABCD\) parallelogrammida \(DE\) kesma o'tkazilgan. \(E\) va \(F\) nuqtalar \(AB\) va \(DE\) tomonlarining o'rtalari. Agar \(ABCD\) parallelogramm yuzi 48 ga teng bo'lsa, \(CGF\) uchburchak yuzini toping. \\
+\begin{center}
+    \centering
+    \includegraphics[width=0.5\linewidth]{5.png}
+\end{center}
+\begin{enumerate}
+    \item[A)] 4
+    \item[B)] 2
+    \item[C)] 8
+    \item[D)] 6
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[25-savol]
+\(ABCD\) trapetsiyasida \(AE = BE\). Agar \(S_{CKDE} = 9\) va \(S_{CDK} = 3\) bo'lsa, trapetsiya yuzini toping. \\
+\begin{center}
+    \centering
+    \includegraphics[width=0.5\linewidth]{6.png}
+\end{center}
+\begin{enumerate}
+    \item[A)] 54
+    \item[B)] 52
+    \item[C)] 48
+    \item[D)] 44
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[26-savol]
+\(ABCDEFGH\) — muntazam sakkizburchak. Agar \(\overrightarrow{AH} = \vec{x}\), \(\overrightarrow{AE} = \vec{y}\) bo'lsa, \(\overrightarrow{DC} + \overrightarrow{CB} + \overrightarrow{BA}\) vektorni \(\vec{x}\) va \(\vec{y}\) vektorlar orqali ifodalang. \\
+\begin{enumerate}
+    \item[A)] \(\vec{x} + \vec{y}\)
+    \item[B)] \(\vec{x} - \vec{y}\)
+    \item[C)] \(\vec{y} - \vec{x}\)
+    \item[D)] \(-\vec{x} - \vec{y}\)
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[27-savol]
+\(ABC\) to'g'ri burchakli uchburchagi berilgan. \(K\) va \(M\) nuqtalar mos ravishda \(ABD\) va \(BDH\) uchburchaklarning massalar markazlari. \(|KM|\) kesma uzunligini toping. \\
+\begin{center}
+    \centering
+    \includegraphics[width=0.5\linewidth]{7.png}
+\end{center}
+\begin{enumerate}
+    \item[A)] \(2\sqrt{3}\)
+    \item[B)] \(2\sqrt{2}\)
+    \item[C)] 3
+    \item[D)] 4
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[28-savol]
+\(ABCD\) va \(AEFK\) to'rtburchaklar berilgan. Agar \(BC = FL = 4\) sm, \(LC = 3\) sm, \(AB = 10\) sm va \(KF = 8\) sm bo'lsa, berilgan chizmadan \(AK = x\) ni toping. \\
+\begin{center}
+    \centering
+    \includegraphics[width=0.5\linewidth]{11.png}
+\end{center}
+\begin{enumerate}
+    \item[A)] \(3\sqrt{3}\)
+    \item[B)] \(4\sqrt{2}\)
+    \item[C)] 5
+    \item[D)] 6
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[29-savol]
+Asosi \(a\) va shu asosga tushirilgan balandligi \(h\) bo'lgan uchburchakka parallelogramm shunday ichki chizilganki, uning bir tomoni \(a\) asosida yotadi. Parallelogramm yuzi maksimal bo'lishi uchun uning asosi qanday tanlanishi kerak? \\
+\begin{enumerate}
+    \item[A)] \(\frac{a}{2}\)
+    \item[B)] \(\frac{a}{3}\)
+    \item[C)] \(\frac{a}{4}\)
+    \item[D)] \(\frac{\sqrt{3}a}{2}\)
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[30-savol]
+Muntazam olti burchakli prizmaning yoyilmasi rasmdagi kabi. Agar \(AB = 8\) m, \(CD = 6\) m bo'lsa, muntazam olti burchakli prizma hajmini toping. \\
+\begin{center}
+    \centering
+    \includegraphics[width=0.5\linewidth]{12.png}
+\end{center}
+\begin{enumerate}
+    \item[A)] \(120\sqrt{3}\)
+    \item[B)] \(108\sqrt{3}\)
+    \item[C)] \(144\sqrt{3}\)
+    \item[D)] \(96\sqrt{3}\)
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[31-savol]
+Silindrning ikkita asosi yuzalari yig'indisi uning yon sirti yuzasiga teng. Agar uning hajmi \(64\pi\) bo'lsa, silindrning o'q kesimi yuzasini toping. \\
+\begin{enumerate}
+    \item[A)] 32
+    \item[B)] 16
+    \item[C)] 8
+    \item[D)] 20
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[32-savol]
+Shar ichiga muntazam to'rtburchakli piramida ichki chizilgan. Agar piramida balandligi shar ekvatori tomonidan 5 va 4 uzunlikdagi kesmalarga bo'linsa, piramida hajmini toping. \\
+\begin{enumerate}
+    \item[A)] 32
+    \item[B)] 54
+    \item[C)] 64
+    \item[D)] 81
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[33-savol]
+Muntazam \(SABC\) uchburchakli piramidasida yon qirrasi asos tomonidan 2 marta uzun. \(SAB\) uchburchakda \(AH\) balandlik, \(ABC\) uchburchakda esa \(BM\) mediana o'tkazilgan. \(AH\) kesma uzunligining \(BM\) kesma uzunligiga nisbatini toping. \\
+\begin{enumerate}
+    \item[A)] 2:1
+    \item[B)] \(\frac{\sqrt{5}}{2}\)
+    \item[C)] \(\frac{\sqrt{3}}{4}\)
+    \item[D)] \(\frac{13}{5}\)
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[34-savol]
+Muntazam uchburchakli prizma hajmi 16 ga teng. Asos tomoni qanday uzunlikda bo'lganda prizmaning to'la sirti eng kichik bo'ladi? \\
+\begin{enumerate}
+    \item[A)] 3
+    \item[B)] 4
+    \item[C)] 2
+    \item[D)] \(3\sqrt{2}\)
+\end{enumerate}
+\end{savol}
+
+\vspace{0.3cm}
+
+\begin{savol}[35-savol]
+Muntazam uchburchakli kesik piramida asoslarining tomonlari 3 va 7 ga teng. Unga shar ichki chizilgan. Piramidaning yon sirti yuzasini toping.
+\begin{enumerate}
+    \item[A)] \(25\sqrt{3}\)
+    \item[B)] \(20\sqrt{3}\)
+    \item[C)] \(15\sqrt{5}\)
+    \item[D)] 27
+\end{enumerate}
+\end{savol}
+
+\end{enumerate}
+
+\end{document}
