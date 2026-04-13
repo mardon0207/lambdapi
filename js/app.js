@@ -921,8 +921,8 @@ const app = {
 
     async saveTestToGitHub(exam, testId, testData, files) {
         const token = this.state.githubToken;
-        const owner = 'AdminMardon'; // Hardcoded for this project
-        const repo = 'prog2';
+        const owner = 'mardon0207';
+        const repo = 'mathcore-platform';
         
         const jsPath = `js/data/${exam}/${testId}.js`;
         const jsContent = `TEST_DATA = ${JSON.stringify(testData, null, 2)};`;
