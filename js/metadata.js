@@ -12,7 +12,6 @@ const EXAMS_METADATA = {
     "10": 35
   },
   "DTM": {
-    "1": 35,
     "demo": 5
   },
   "MS": {
