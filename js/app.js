@@ -173,21 +173,18 @@ const app = {
             DTM: { 
                 title: 'ДТМ', 
                 subtitle: 'Базовый поток для абитуриентов. Подготовка к государственному тестированию.', 
-                points: ['2 тренировочных теста', '40 тематических вопросов'],
                 icon: 'check-badge',
                 accent: 'accent-cyan' 
             },
             MS: { 
                 title: 'Национальный сертификат', 
                 subtitle: 'Общая математика. Подготовка к получению национального сертификата компетенции.', 
-                points: ['1 расширенный тест', '5 эталонных вопросов'],
                 icon: 'medal',
                 accent: 'accent-gold' 
             },
             Attestatsiya: { 
                 title: 'Аттестация', 
                 subtitle: 'Профильный блок для преподавателей. Повышение квалификационной категории.', 
-                points: ['10 комплексных тестов', '350 практических вопросов'],
                 icon: 'shield',
                 accent: 'accent-emerald' 
             }
@@ -196,21 +193,18 @@ const app = {
             DTM: { 
                 title: 'DTM', 
                 subtitle: 'Davlat test markazi imtihonlari. Abituriyentlar uchun asosiy yo\'nalish.',
-                points: ['2 ta mashq testi', '40 ta mavzulashtirilgan savol'],
                 icon: 'check-badge',
                 accent: 'accent-cyan' 
             },
             MS: { 
                 title: 'Milliy sertifikat', 
                 subtitle: 'Matematika bo\'yicha milliy sertifikat. Umumiy kompetensiya bahosi.',
-                points: ['1 ta kengaytirilgan test', '5 ta namunaviy savol'],
                 icon: 'medal',
                 accent: 'accent-gold' 
             },
             Attestatsiya: { 
                 title: 'Attestatsiya', 
                 subtitle: 'O\'qituvchilar attestatsiyasi. Malaka toifasini oshirish uchun tayyorgarlik.',
-                points: ['10 ta kompleks test', '350 ta amaliy savol'],
                 icon: 'shield',
                 accent: 'accent-emerald' 
             }
