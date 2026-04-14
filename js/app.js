@@ -20,7 +20,7 @@ const app = {
             navResults: 'Результаты',
             navAdmin: 'Админ',
             heroTag: 'ПЛАТФОРМА ПОДГОТОВКИ',
-            heroTitle: 'Собранная и спокойная подготовка к экзаменам',
+            heroTitle: 'Собранная и спокойная подготовка к <span class="text-accent">экзаменам</span>',
             heroSubtitle: 'Профессиональная образовательная среда для эффективного освоения математики. Подготовка к DTM, Milliy Sertifikat и квалификационной аттестации педагогов.',
             heroCTA: 'Начать обучение',
             heroDemo: 'Демо-тест',
@@ -93,7 +93,7 @@ const app = {
             navResults: 'Natijalar',
             navAdmin: 'Admin',
             heroEyebrow: 'Matematika bo‘yicha tayyorgarlik platformasi',
-            heroTitle: 'Imtihonga puxta va tartibli tayyorgarlik',
+            heroTitle: 'Imtihonlarga puxta va tartibli <span class="text-accent">tayyorgarlik</span>',
             heroSubtitle: 'DTM, Milliy sertifikat va Attestatsiya yo‘nalishlari bo‘yicha mashq qiling, tilni almashtiring va testlarni qulay interfeysda yeching.',
             heroStatTests: 'ta test mavjud',
             heroStatQuestions: 'ta savol mavjud',
@@ -146,7 +146,7 @@ const app = {
             adminStatus: 'Holati',
             navGetStarted: 'Boshlash',
             heroTag: 'TAYYORLOV PLATFORMASI',
-            heroTitle: 'Imtihonlarga puxta va tartibli tayyorgarlik',
+            heroTitle: 'Imtihonlarga puxta va tartibli <span class="text-accent">tayyorgarlik</span>',
             heroSubtitle: 'Matematika bo‘yicha professional ta’lim muhiti. DTM, Milliy sertifikat va o‘qituvchilar attestatsiyasiga samarali tayyorlaning.',
             heroCTA: 'O‘qishni boshlash',
             heroDemo: 'Demo test',
@@ -576,29 +576,42 @@ const app = {
                         </div>
                     </section>
                     <section class="glass-container admin-panel-ui">
-                        <div class="admin-grid-form">
-                            <div class="input-shell">
-                                <label>${current.adminTokenLabel}</label>
-                                <input type="password" id="gh-token" class="glass-input" value="${this.state.githubToken}">
+                        <div class="admin-tabs">
+                            <button class="admin-tab-btn active" onclick="app.switchAdminTab('add')">${current.adminUploadTitle}</button>
+                            <button class="admin-tab-btn" onclick="app.switchAdminTab('manage')">Управление тестами</button>
+                        </div>
+                        
+                        <div id="admin-tab-add" class="admin-tab-content active">
+                            <div class="admin-grid-form">
+                                <div class="input-shell">
+                                    <label>${current.adminTokenLabel}</label>
+                                    <input type="password" id="gh-token" class="glass-input" value="${this.state.githubToken}">
+                                </div>
+                                <div class="input-shell">
+                                    <label>${current.adminExamSelect}</label>
+                                    <select id="admin-exam" class="glass-input">
+                                        <option value="Attestatsiya">Attestation</option>
+                                        <option value="DTM">DTM</option>
+                                        <option value="MS">Milliy Sertifikat</option>
+                                    </select>
+                                </div>
+                                <div class="input-shell">
+                                    <label>${current.adminTestNum}</label>
+                                    <input type="number" id="admin-test-id" class="glass-input" placeholder="e.g. 11">
+                                </div>
+                                <div class="input-shell full">
+                                    <label>${current.adminFilesLabel}</label>
+                                    <input type="file" id="admin-files" class="glass-input" multiple>
+                                </div>
+                                <button class="btn-primary full" id="admin-save-btn">${current.adminSave}</button>
+                                <div id="admin-log" class="admin-log"></div>
                             </div>
-                            <div class="input-shell">
-                                <label>${current.adminExamSelect}</label>
-                                <select id="admin-exam" class="glass-input">
-                                    <option value="Attestatsiya">Attestation</option>
-                                    <option value="DTM">DTM</option>
-                                    <option value="MS">Milliy Sertifikat</option>
-                                </select>
+                        </div>
+
+                        <div id="admin-tab-manage" class="admin-tab-content">
+                            <div class="admin-test-manager" id="admin-test-list">
+                                <!-- Populated by renderAdminTestList -->
                             </div>
-                            <div class="input-shell">
-                                <label>${current.adminTestNum}</label>
-                                <input type="number" id="admin-test-id" class="glass-input" placeholder="e.g. 11">
-                            </div>
-                            <div class="input-shell full">
-                                <label>${current.adminFilesLabel}</label>
-                                <input type="file" id="admin-files" class="glass-input" multiple>
-                            </div>
-                            <button class="btn-primary full" id="admin-save-btn">${current.adminSave}</button>
-                            <div id="admin-log" class="admin-log"></div>
                         </div>
                     </section>
                 `;
@@ -947,28 +960,126 @@ const app = {
     attachAdminEvents() {
         const saveBtn = document.getElementById('admin-save-btn');
         const tokenInput = document.getElementById('gh-token');
-        tokenInput.onchange = (e) => {
-            this.state.githubToken = e.target.value;
-            localStorage.setItem('mc_gh_token', e.target.value);
-        };
+        if (tokenInput) {
+            tokenInput.onchange = (e) => {
+                this.state.githubToken = e.target.value;
+                localStorage.setItem('mc_gh_token', e.target.value);
+            };
+        }
 
-        saveBtn.onclick = async () => {
-            const exam = document.getElementById('admin-exam').value;
-            const testId = document.getElementById('admin-test-id').value;
-            const files = document.getElementById('admin-files').files;
+        if (saveBtn) {
+            saveBtn.onclick = async () => {
+                const exam = document.getElementById('admin-exam').value;
+                const testId = document.getElementById('admin-test-id').value;
+                const files = document.getElementById('admin-files').files;
+                
+                if (!testId || files.length === 0) return alert('Fill all fields');
+                if (!this.state.githubToken) return alert('GitHub Token required');
+
+                this.adminLog('Starting process...', 'info');
+                try {
+                    const testData = await this.parseAdminFiles(files, testId);
+                    await this.saveTestToGitHub(exam, testId, testData, files);
+                    this.adminLog('Success! GitHub repository updated.', 'success');
+                    this.renderAdminTestList(); // Refresh list if open
+                } catch (e) {
+                    this.adminLog('Error: ' + e.message, 'error');
+                }
+            };
+        }
+        
+        this.renderAdminTestList();
+    },
+
+    switchAdminTab(tab) {
+        document.querySelectorAll('.admin-tab-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.admin-tab-content').forEach(content => content.classList.remove('active'));
+        
+        event.currentTarget.classList.add('active');
+        document.getElementById(`admin-tab-${tab}`).classList.add('active');
+    },
+
+    renderAdminTestList() {
+        const list = document.getElementById('admin-test-list');
+        if (!list) return;
+        
+        list.innerHTML = '';
+        Object.keys(EXAMS_METADATA).forEach(exam => {
+            const h3 = document.createElement('h3');
+            h3.textContent = exam;
+            h3.style.margin = '1rem 0 0.5rem';
+            h3.style.fontSize = '0.9rem';
+            h3.style.color = 'var(--accent)';
+            list.appendChild(h3);
+
+            const tests = EXAMS_METADATA[exam];
+            Object.keys(tests).forEach(testId => {
+                const row = document.createElement('div');
+                row.className = 'admin-manage-row';
+                row.innerHTML = `
+                    <span>Test #${testId} (${tests[testId]} questions)</span>
+                    <button class="btn-delete" onclick="app.handleDeleteTest('${exam}', '${testId}')">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2M10 11v6M14 11v6"/></svg>
+                        Delete
+                    </button>
+                `;
+                list.appendChild(row);
+            });
+        });
+    },
+
+    async handleDeleteTest(exam, testId) {
+        if (!confirm(`Вы уверены, что хотите удалить тест ${exam} #${testId}?`)) return;
+        if (!this.state.githubToken) return alert('GitHub Token required');
+
+        const owner = 'mardon0207';
+        const repo = 'lambdapi';
+
+        try {
+            this.adminLog(`Deleting ${exam} #${testId}...`, 'info');
             
-            if (!testId || files.length === 0) return alert('Fill all fields');
-            if (!this.state.githubToken) return alert('GitHub Token required');
+            // 1. Remove from Metadata
+            delete EXAMS_METADATA[exam][testId];
+            const metaContent = `const EXAMS_METADATA = ${JSON.stringify(EXAMS_METADATA, null, 2)};`;
+            await this.githubCommit(owner, repo, 'js/metadata.js', metaContent, `Delete metadata for ${exam} #${testId}`);
 
-            this.adminLog('Starting process...', 'info');
+            // 2. Delete test data file
             try {
-                const testData = await this.parseAdminFiles(files, testId);
-                await this.saveTestToGitHub(exam, testId, testData, files);
-                this.adminLog('Success! GitHub repository updated.', 'success');
+                await this.githubDelete(owner, repo, `js/data/${exam}/${testId}.js`, `Delete data file for ${exam} #${testId}`);
             } catch (e) {
-                this.adminLog('Error: ' + e.message, 'error');
+                console.warn('Data file not found or already deleted', e);
             }
-        };
+
+            this.adminLog(`Test ${testId} deleted successfully.`, 'success');
+            this.renderAdminTestList();
+        } catch (e) {
+            this.adminLog('Error: ' + e.message, 'error');
+        }
+    },
+
+    async githubDelete(owner, repo, path, message) {
+        const token = this.state.githubToken;
+        const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+        
+        const resGet = await fetch(url, { headers: { Authorization: `Bearer ${token}` } });
+        if (!resGet.ok) throw new Error(`Could not find file to delete: ${path}`);
+        
+        const data = await resGet.json();
+        const sha = data.sha;
+
+        const resDel = await fetch(url, {
+            method: 'DELETE',
+            headers: { 
+                Authorization: `Bearer ${token}`, 
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ message, sha })
+        });
+
+        if (!resDel.ok) {
+            const err = await resDel.json();
+            throw new Error(err.message);
+        }
     },
 
     adminLog(msg, type) {

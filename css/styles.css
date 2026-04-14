@@ -314,13 +314,21 @@ main {
     font-size: clamp(2.6rem, 5vw, 4.2rem);
     font-family: var(--font-heading);
     font-weight: 800;
-    line-height: 1.08;
-    letter-spacing: -0.02em;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
     max-width: 16ch;
     background: linear-gradient(135deg, #fff 0%, #e2e8f0 40%, var(--cyan) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+.text-accent {
+    background: linear-gradient(135deg, var(--cyan), #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 15px rgba(34, 211, 238, 0.3));
 }
 
 .hero-description {
@@ -1424,6 +1432,100 @@ footer {
 .admin-log .success { color: var(--emerald); }
 .admin-log .error { color: var(--rose); }
 .admin-log .info { color: var(--cyan); }
+
+/* ─── Admin Tabs ─── */
+.admin-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+}
+
+.admin-tab-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.admin-tab-btn:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.admin-tab-btn.active {
+    color: var(--cyan);
+    background: rgba(34, 211, 238, 0.1);
+}
+
+.admin-tab-content {
+    display: none;
+}
+
+.admin-tab-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* ─── Test Management ─── */
+.admin-test-manager {
+    display: grid;
+    gap: 0.8rem;
+    text-align: left;
+}
+
+.admin-manage-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition);
+}
+
+.admin-manage-row:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.admin-manage-row span {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.btn-delete {
+    background: rgba(251, 113, 133, 0.1);
+    color: var(--rose);
+    border: 1px solid rgba(251, 113, 133, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: all 0.3s ease;
+}
+
+.btn-delete:hover {
+    background: var(--rose);
+    color: white;
+    box-shadow: 0 4px 12px rgba(251, 113, 133, 0.2);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
 /* ─── Glass Input ─── */
 .glass-input {
